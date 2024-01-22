@@ -1,0 +1,240 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+
+#include <iostream>
+#include<cstring>
+#include<string>
+using namespace std;
+typedef int marks;
+typedef int rollno;
+enum day {mon=1,tue,wed,thu,fri,sat,sun};
+
+
+int gcd(int a, int b) // The function runs recursive in nature to return GCD  
+{  
+    if (b == 0) // if b becomes 0 return a   
+        return a;  
+    if(a==0) return b;
+    if(a>b)
+     return gcd(a-b,b); // divide to a by b to make smaller number   
+    return gcd(a,b-a);   
+}  
+int main()
+{
+    
+    // int a=13,b=6;
+    // float c;
+    // c=(float)a/b;
+    // string d,e;
+    // cout<<"enter names ";
+    // // cin>>d;
+    // getline(cin,d);
+    // int c=a+b;
+    // int c=5,d;
+    // d=c++;
+    // char x=127;
+    // x++;
+    // cout<<(int)x;
+    
+    // int a=5,b=6;
+    // int incr;
+    // incr=(a<b) && (b++);
+    // cout<<incr<<" "<<b;
+    
+    // int a=-2,b=-1;
+    // int incr;
+    // incr=(a>b) || (b++);//short circuit
+    // cout<<incr<<" "<<b;
+    
+    // int a=6;
+    // cout<<~a;
+    
+    // int x=1,y=1;
+    // if(x&y)cout<<"x&y is 1"<<endl;
+    // if(x&&y)cout<<"x&&y is 1";
+    
+    // marks m1=1,m2=2,m3=3;
+    // rollno a=1,b=2;
+    // cout<<m1<<m2<<m3<<a<<b;
+    // day d;
+    // d=wed;
+    // cout<<d;
+    
+    // cout<<gcd(12,10);
+    // int c=1;
+    // for(int i=0;i<4;i++){
+    //     for(int j=0;j<4;j++){
+    //         if(j<i)
+    //           cout<<" ";
+    //         else
+    //           cout<<"*";
+            
+    //     }
+    //     cout<<endl;
+    // }
+    
+    // for(int i=0;i<4;i++){
+    //     for(int j=0;j<4;j++){
+    //         if((i+j)>=3)
+    //           cout<<"*";
+    //         else
+    //           cout<<" ";
+            
+    //     }
+    //     cout<<endl;
+    // }
+    // char s[20];
+    // char s[20],s1[20];
+    // cout<<"enter a string  ";
+    // // cin>>s;
+    // // cin.getline(s,50);
+    // // getline(cin,s);
+    // cin.get(s,50);
+    // cout<<s;
+    
+    // //  string s1;
+    // cin.ignore();
+    // cout<<"enter a string  ";
+    // // cin>>s;
+    // // cin.getline(s,50);
+    // // getline(cin,s1);
+    // cin.get(s1,50);
+    // cout<<s1;
+
+      char s[] = "Hello world";
+      char s1[] = "hello world";
+      char s2='o';
+      char s3[10]="235";char s5[10]="53.3";
+      char s4[]="x=10;y=8,u=90;j=70";
+     
+    //  strncat(s,s1,4);
+    //  strncpy(s,s1,7);
+    // cout << strcat(s, s1); // This line is commented out, as it can cause issues. Uncomment if needed.
+    //  cout << strlen(s1);
+    //  cout << s;
+    
+    // cout<<strstr(s,s1);
+    // cout<<strchr(s,s2)<<endl;
+    // cout<<strrchr(s,s2);
+    // cout<<strcmp(s1,s);
+    
+    // long x=strtol(s3,NULL,10);
+    // float y=strtof(s5,NULL);
+    // cout<<x<<endl<<y;
+    
+    
+    // //tokenization
+    //   char *token=strtok(s4,";");
+    //   while(token!=NULL){
+    //   cout<<token<<endl;
+    //   token=strtok(NULL,",;");
+    //   }
+      
+      
+    // string class functions
+    
+    string rev="madam";
+    string s6=rev;
+
+    int n = s6.length();
+ 
+    // Swap character starting from two
+    // corners
+    for (int i = 0; i < n / 2; i++)
+        swap(s6[i], s6[n - i - 1]);
+       
+    cout<<s6<<endl;
+    
+    if(rev==s6){
+        cout<<"pallindrome";
+    }
+    
+    // string::iterator it;
+    // it=s6.begin();
+    // for(it=s6.begin();it!=s6.end();it++){
+    //     *it=*it-32;
+    //     cout<<*it<<" ";
+        
+    // }
+    
+    // for(int i=0;i<s6.length();i++){
+    //     // s6[i]-=32;//for capital
+    //     cout<<s6[i]<<" ";
+        
+    // }
+
+
+    // cout<<s6.length();
+    // cout<<s6.size();
+    // cout<<s6.capacity();
+    // cout<<s6.max_size();
+    // cout<<s6.empty();
+    
+    // s6.insert(3,"this is arabinda",4);
+    // s6.replace(5,0," arabinda,");
+    // cout<<s6<<endl;
+    
+    // cout<<s6<<endl;
+    // char str[30];
+
+    // s6.copy(str,3);
+    // cout<<s6.find("are")<<endl;
+    // cout<<s6.rfind("are")<<endl;
+
+    // for(int i=0;i<4;i++){
+    //     for(int j=0;j<4-i;j++){
+            
+    //           cout<<"*";
+            
+            
+    //     }
+    //     cout<<endl;
+    // }
+
+    // cout<<str;
+
+    // string str1="mh";
+    // string str2="eH";
+    // cout<<str1.compare(str2);
+
+// vowel consonant word count
+
+//   string str="how many       words8909";
+// 	int vowels=0,consonant=0,space=0;
+
+// 	for(int i=0;str[i]!='\0';i++)
+// 	{
+// 		if(str[i]=='A' || str[i]=='E' || str[i]=='I' || str[i]=='O' || str[i]=='U' || str[i]=='a' || str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u')
+// 		      vowels++;
+		      
+// 		else if(str[i]==' ' && str[i-1]!=' ')
+// 		      space++;
+		      
+// 		else if((str[i]>=65 && str[i]<=90)||(str[i]>=97 && str[i]<=122))
+// 		  consonant++;
+	
+// 	}
+// 	cout<<"vowels "<<vowels<<endl;
+// 	cout<<"consonant "<<consonant<<endl;
+// 	cout<<"words "<<space+1<<endl;
+
+// circular std::queue
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
