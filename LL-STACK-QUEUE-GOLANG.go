@@ -27,8 +27,7 @@ func (l * linkedList) addNext(n *node){
         current = current.next
     }
     current.next=n
-    // l.head.next=second
-}
+    
 
 func (l linkedList) printList() {
     // current := l.head//it is not changing the value it works on the copy so no need of current variable
