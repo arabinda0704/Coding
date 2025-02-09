@@ -19,15 +19,22 @@ class Employee:
         return "{} {}".format(self.fname,self.lname)
     def applyRaise():
         self.pay= int(self.pay *self.raise_amount)
-    @classmethod #as an alternative of constructor
+    @classmethod #can be used as an alternative of constructor and it can only take class variables and can not take instance variables
     def from_string(cls,emp_str):
         first, last, pay=emp_str.split("-")
         return cls(first,last,pay)
-    @staticmethod
+    @staticmethod #Don't access any member of the class
     def is_workday(day):
         if day.weekday()==5 or day.weekday()==6:
             return False
         return True
+    
+#Inheritance
+class developers(Employee):
+    raise_amount=1.10
+    def __init__(self,first,last,pay,prog_lang):
+        super().__init__(first,last,pay)
+        self.prog_lang=prog_lang
 
 # print(Employee.num_of_emps)
 # emp_1=Employee("Arabinda","Das",500)
@@ -69,8 +76,8 @@ class Employee:
 # print(emp_1.__dict__)
 # print(Employee.__dict__)
 
-emp_str_1="steve-smith-300"
-emp_str_2="Mahendra-Singh-700"
+# emp_str_1="steve-smith-300"
+# emp_str_2="Mahendra-Singh-700"
 
 # first1, last1, pay1=emp_str_1.split("-")
 # first2, last2, pay2=emp_str_2.split("-")
@@ -78,14 +85,23 @@ emp_str_2="Mahendra-Singh-700"
 # new_emp_1=Employee(first1,last1,pay1)
 # new_emp_2=Employee(first2,last2,pay2)
 
-new_emp_1=Employee.from_string(emp_str_1)
-new_emp_2=Employee.from_string(emp_str_2)
+# new_emp_1=Employee.from_string(emp_str_1)
+# new_emp_2=Employee.from_string(emp_str_2)
 
-print(new_emp_1.mail)
-print(new_emp_1.pay)
+# print(new_emp_1.mail)
+# print(new_emp_1.pay)
 
-print(new_emp_2.mail)
-print(new_emp_2.pay)
+# print(new_emp_2.mail)
+# print(new_emp_2.pay)
 
-my_date=datetime.date(2025,2,8)
-print(Employee.is_workday(my_date))
+# my_date=datetime.date(2025,2,8)
+# print(Employee.is_workday(my_date))
+
+dev_1=developers("Suresh","Raina",300,"python")
+dev_2=developers("Rahul","Dravid",900,"java")
+
+# print(dev_1.mail)
+# print(dev_2.pay)
+
+print(dev_1.prog_lang)
+print(dev_2.prog_lang)
