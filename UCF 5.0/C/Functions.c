@@ -1,7 +1,7 @@
 #include<stdio.h>
 // void add(void);
 int main(){
-    void add(void);//funtion prototype or function declaration
+    void add(void);//funtion prototype or function declaration here it is local declaration
     add();//Function Call
 }
 void add()//Function Definition
