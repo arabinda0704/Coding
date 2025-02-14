@@ -1,6 +1,10 @@
 #include<iostream>
 #include<vector>
 #include<list>
+#include<queue>
+#include<map>
+#include<set>
+
 using namespace std;
 int main() {
 
@@ -124,11 +128,64 @@ int main() {
     vector<pair<int,int>> vec4={{1,2},{3,4},{4,5},{5,6}};
     vec4.push_back({6,7});//insert
     vec4.emplace_back(7,8);//in-place object create
+
     // for( pair<int,int> p:vec4){
     //     cout<<p.first<< " "<< p.second<<endl;
     // }
     for( auto p:vec4){
         cout<<p.first<< " "<< p.second<<endl;
     }
+    //Piority Queue
+
+    // priority_queue<int> q;//maxheap
+    priority_queue<int,vector<int>,greater<int>> q;//Here greater<int> is functor it will make it into minheap
+
+    q.push(2);
+    q.emplace(3);
+    q.push(4);
+    q.push(1);
+    while(!q.empty()){
+        cout<<q.top()<<endl;
+        q.pop();
+    }
+    //Map
+    map<int,string> m;
+    m[4]="Arabinda";
+    m[2]="Ayra";
+    m[2]="Ayra Das";
+
+    m[3]="Ayra";
+    m.insert({1,"Rabindranath"});
+    m.emplace(5,"Tagore");
+
+    for(auto p:m){//Map prints in ascending order of keys and key is unuique
+        cout<<p.first<<" "<<p.second<<endl;
+    }
+    cout<<endl;
+
+    cout<<m.count(2)<<endl;
+    
+    m.erase(3);
+    for(auto p:m){//Map prints in ascending order of keys and key is unuique
+        cout<<p.first<<" "<<p.second<<endl;
+    }
+    cout<<endl;
+
+    //Set
+    set<int> s;
+    s.insert(2);
+    s.insert(3);
+    s.insert(1);
+    s.insert(5);
+
+    for(auto i:s){
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    cout<<*(s.lower_bound(4))<<endl;//return 4 if available otherwise returns just bigger than 4
+    cout<<*(s.upper_bound(3))<<endl;//does not return 3 return just bigger than 3
+
+
+
     return 0;
 }
