@@ -71,6 +71,10 @@
 # print(cs_courses.difference(arts_courses))
 # print(cs_courses.union(arts_courses))
 
+
+
+
+
 #FIRST CLASS FUNCTION
 # def square(x):
 #     return x*x
@@ -109,11 +113,11 @@
 # a()
 
 #DECORATOR
-def decorator_fun(original_fun):
-    def wrapper_fun(*args,**kwargs):
-        print(f"wrapper executed this before {original_fun.__name__}")
-        return original_fun(*args,**kwargs)
-    return wrapper_fun
+# def decorator_fun(original_fun):
+#     def wrapper_fun(*args,**kwargs):
+#         print(f"wrapper executed this before {original_fun.__name__}")
+#         return original_fun(*args,**kwargs)
+#     return wrapper_fun
 # @decorator_fun # no need to write ---> display=decorator_fun(display) below only display() will work in same way
 # def display():
 #     print("Display function ran")
@@ -125,3 +129,16 @@ def decorator_fun(original_fun):
 # def display_info(name,age):
 #     print(f"display info ran with argument {name} {age}")
 # display_info("Arabinda",25)
+
+# x=5
+# print(id(x))
+# y=x
+# x=x+1
+# print(id(x))
+# z=5
+# print(id(y))
+# print(id(z))
+
+student={"name":"John","age":25,"courses":['math','compsci']}
+print(student["courses"])
+print(student.get("Phone","Not found"))#We get none instead of keyerro if we use get method if the key doesn't exist
