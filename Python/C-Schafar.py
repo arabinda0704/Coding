@@ -71,7 +71,21 @@
 # print(cs_courses.difference(arts_courses))
 # print(cs_courses.union(arts_courses))
 
+#Dictionary
 
+student={"name":"John","age":25,"courses":['math','compsci']}
+print(student["courses"])
+print(student.get("Phone","Not found"))#We get none instead of keyerro if we use get method if the key doesn't exist
+print(student.keys())
+print(student.values())
+print(student.items())
+for key,value in student.items():
+    print(key,value)
+
+del student['age']
+name=student.pop("name")
+print(student)
+print(name)
 
 
 
@@ -139,6 +153,3 @@
 # print(id(y))
 # print(id(z))
 
-student={"name":"John","age":25,"courses":['math','compsci']}
-print(student["courses"])
-print(student.get("Phone","Not found"))#We get none instead of keyerro if we use get method if the key doesn't exist
