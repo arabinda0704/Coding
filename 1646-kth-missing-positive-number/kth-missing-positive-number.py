@@ -7,7 +7,6 @@ class Solution:
                 l = mid + 1
             else:
                 r = mid - 1
-        return r + k + 1
-
+        return arr[r]+k-(arr[r]-(r+1))
             
         
