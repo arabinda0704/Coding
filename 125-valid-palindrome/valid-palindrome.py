@@ -1,8 +1,8 @@
 
 def alphaNum(c):
-    return (65 <= ord(c) <= 90 or 
-            97 <= ord(c) <= 122 or 
-            48 <= ord(c) <= 57)
+    return ('A' <= c <= 'Z' or 
+            'a' <= c <= 'z' or 
+            '0' <= c <= '9')
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         l, r = 0, len(s) - 1
