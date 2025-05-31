@@ -5,15 +5,15 @@ class Solution:
 
         countS, countT = {}, {}
 
-        for i in range(len(s)):
-            if s[i] in countS:
-                countS[s[i]] += 1 
+        for c in s:
+            if c in countS:
+                countS[c] += 1 
             else:
-                countS[s[i]]=1
-        for i in range(len(s)):#since length of s and t are same
-            if t[i] in countT:
-                countT[t[i]] += 1 
+                countS[c]=1
+        for c in t:
+            if c in countT:
+                countT[c] += 1 
             else:
-                countT[t[i]]=1
+                countT[c]=1
         return countS == countT
         
