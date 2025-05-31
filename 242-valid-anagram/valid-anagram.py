@@ -10,7 +10,7 @@ class Solution:
                 countS[s[i]] += 1 
             else:
                 countS[s[i]]=1
-        for i in range(len(s)):
+        for i in range(len(s)):#since length of s and t are same
             if t[i] in countT:
                 countT[t[i]] += 1 
             else:
