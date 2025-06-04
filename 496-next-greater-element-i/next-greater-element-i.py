@@ -1,5 +1,6 @@
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        #Brute
         # res=[]
         # for num in nums1:
         #     nextGreater=-1
@@ -10,6 +11,8 @@ class Solution:
         #             break
         #     res.append(nextGreater)
         # return res
+
+        #Better/Optimal
         nums1Idx = {num : i for i, num in enumerate(nums1)}
         res = [-1] * len(nums1)
 
@@ -23,3 +26,7 @@ class Solution:
             if cur in nums1Idx:
                 stack.append(cur)
         return res
+
+
+
+        
