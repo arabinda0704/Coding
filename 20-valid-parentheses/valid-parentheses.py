@@ -18,7 +18,7 @@ class Solution:
     def isValid(self, s: str) -> bool:
         d=Solution()
         for c in s:
-            if c == '(' or c == '{' or c == '[': 
+            if c in "({[": #c == '(' or c == '{' or c == '[': 
                 d.Push(c)
             else:
                 if len(d.q) == 0:
