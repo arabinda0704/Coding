@@ -8,6 +8,11 @@ def isPalindrome(s):
     return True
 
 class Solution:
+    # def firstPalindrome(self, words: List[str]) -> str:
+    #     for word in words:
+    #         if word == word[::-1]:  # Pythonic palindrome check
+    #             return word
+    #     return ""
     def firstPalindrome(self, words: List[str]) -> str:
         for word in words:
             if isPalindrome(word):
