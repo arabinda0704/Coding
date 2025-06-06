@@ -10,9 +10,20 @@ class Solution:
         #         nums[insert_pos] = nums[i]
         #         insert_pos += 1
         # return insert_pos
-        l = 0
-        for num in nums:
-            if l < 2 or num != nums[l - 2]:
-                nums[l] = num
+        #Another
+        # l = 0
+        # for num in nums:
+        #     if l < 2 or num != nums[l - 2]:
+        #         nums[l] = num
+        #         l += 1
+        # return l
+        #Another
+        if len(nums)<=2:
+            return len(nums)
+        l = 2
+        for i in range(2, len(nums)):
+            if nums[i] != nums[l - 2]:
+                nums[l] = nums[i]
                 l += 1
         return l
+
