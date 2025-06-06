@@ -6,9 +6,19 @@ class Solution:
         #         nums[insert_pos]=nums[i]
         #         insert_pos+=1
         # return insert_pos
-        l = 0
+        #Another
+        # l = 0
+        # for num in nums:
+        #     if l < 1 or num != nums[l - 1]:
+        #         nums[l] = num
+        #         l += 1
+        # return l
+        # Another
+        if len(nums)==1:
+            return len(nums)
+        l = 1
         for num in nums:
-            if l < 1 or num != nums[l - 1]:
+            if num != nums[l - 1]:
                 nums[l] = num
                 l += 1
         return l
