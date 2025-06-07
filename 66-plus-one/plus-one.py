@@ -24,5 +24,5 @@ class Solution:
             else:
                 s[i] += 1  
                 return s
-        s.insert(0, 1) #As the question suggest that question will not contain any leading 0's
+        s.insert(0, 1) #As the question suggest that digits will not contain any leading 0's
         return s
