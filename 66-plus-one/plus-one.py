@@ -7,9 +7,12 @@ class Solution:
             else:
                 s[i] += 1  
                 break  
-        s=s[::-1]
-        if s[-1] == 0:
-            s.append(1)
+        # s=s[::-1]
+        # if s[-1] == 0:
+        #     s.append(1)
 
-        return s[::-1]
+        # return s[::-1]
+        if s[0]==0:
+            s.insert(0, 1)
+        return s
         
