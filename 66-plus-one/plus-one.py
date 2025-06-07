@@ -12,7 +12,7 @@ class Solution:
         #     s.append(1)
 
         # return s[::-1]
-        if s[0]==0:
+        if s[0]==0:   #As the question suggest that question will not contain any leading 0's
             s.insert(0, 1)
         return s
         
