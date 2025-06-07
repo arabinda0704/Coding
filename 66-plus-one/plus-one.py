@@ -6,6 +6,7 @@ class Solution:
                 s[i] = 0
             else:
                 s[i] += 1  
+                return s
                 break  
         # s=s[::-1]
         # if s[-1] == 0:
