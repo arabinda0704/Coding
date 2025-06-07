@@ -14,12 +14,22 @@ class Solution:
         #         return nums[i]
 
         #Another
-        from collections import Counter
+        # from collections import Counter
 
-        dict1 = Counter(nums)
-        for i in range(len(nums)):
-            if dict1[nums[i]]==1:
-                return nums[i]
+        # dict1 = Counter(nums)
+        # for i in range(len(nums)):
+        #     if dict1[nums[i]]==1:
+        #         return nums[i]
 
+        #Another
+        s = set()
+
+        for num in nums:
+            if num in s:
+                s.remove(num)
+            else:
+                s.add(num)
+        for unique in s:
+            return unique
 
                 
