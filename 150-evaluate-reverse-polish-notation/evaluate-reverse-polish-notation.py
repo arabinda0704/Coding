@@ -17,7 +17,7 @@ class Solution:
     
             else:
                 st.append(int(tokens[i]))
-        return st[0]
+        return st.pop()
                 
 
         
