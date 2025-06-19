@@ -20,8 +20,7 @@ class Solution:
         for c in path+"/":
             if c=="/":
                 if cur==".." and st:
-                    if st:
-                        st.pop()
+                    st.pop()
                 elif cur !="" and cur !="." and cur != "..":
                     st.append(cur)
                 cur=""
