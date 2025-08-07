@@ -28,8 +28,8 @@ class Solution:
         if carry:
             new=ListNode(carry)
             cur.next=new
-            cur=cur.next
-        cur.next=None
+        #     cur=cur.next
+        # cur.next=None
         return dummy.next
 
         
