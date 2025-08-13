@@ -7,8 +7,8 @@ class Solution:
         #     mini=arr[i]
         #     for j in range(i,len(arr)):
         #         mini=min(mini,arr[j])
-        #         summ+=mini
-        # return summ % MOD
+        #         summ=(summ+mini)%MOD
+        # return summ 
 
         #Optimal
         MOD = 10**9 + 7
