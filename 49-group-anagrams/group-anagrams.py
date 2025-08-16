@@ -7,9 +7,18 @@ class Solution:
         #         count[ord(c) - ord('a')] += 1
         #     res[tuple(count)].append(s)
         # return list(res.values())
-
+        #Another
         res = defaultdict(list)
         for s in strs:
             key = "".join(sorted(s))  # sorting gives a canonical form
+            res[key].append(s)
+        return list(res.values())
+
+        #Another
+        res = {}
+        for s in strs:
+            key = "".join(sorted(s))
+            if not key:
+                res[key]=[]
             res[key].append(s)
         return list(res.values())
