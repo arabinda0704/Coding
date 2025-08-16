@@ -21,7 +21,7 @@ class Solution:
             if c=="/":
                 if cur==".." and st:
                     st.pop()
-                elif cur !="" and cur !="." and cur != "..":
+                elif cur and cur !="." and cur != "..":
                     st.append(cur)
                 cur=""
             else:
