@@ -15,15 +15,28 @@ class Solution:
         # return "/"+"/".join(st)
 
         #Another
+        # st=[]
+        # cur=""
+        # for c in path+"/":
+        #     if c=="/":
+        #         if cur==".." and st:
+        #             st.pop()
+        #         elif cur and cur !="." and cur != "..":
+        #             st.append(cur)
+        #         cur=""
+        #     else:
+        #         cur+=c
+        # return "/"+"/".join(st)
+
+        #Another After splitting
+        tokens=path.split("/")
         st=[]
-        cur=""
-        for c in path+"/":
-            if c=="/":
-                if cur==".." and st:
-                    st.pop()
-                elif cur and cur !="." and cur != "..":
-                    st.append(cur)
-                cur=""
+        for t in tokens:
+            if t=="" or t==".":
+                continue
+            elif t==".." and st:
+                st.pop()
             else:
-                cur+=c
+                if t!="..":
+                    st.append(t)
         return "/"+"/".join(st)
