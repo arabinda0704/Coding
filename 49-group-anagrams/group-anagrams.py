@@ -8,17 +8,17 @@ class Solution:
         #     res[tuple(count)].append(s)
         # return list(res.values())
         #Another
-        res = defaultdict(list)
-        for s in strs:
-            key = "".join(sorted(s))  # sorting gives a canonical form
-            res[key].append(s)
-        return list(res.values())
+        # res = defaultdict(list)
+        # for s in strs:
+        #     key = "".join(sorted(s))  # sorting gives a canonical form
+        #     res[key].append(s)
+        # return list(res.values())
 
         #Another
         res = {}
         for s in strs:
             key = "".join(sorted(s))
-            if not key:
+            if key not in res:
                 res[key]=[]
             res[key].append(s)
         return list(res.values())
