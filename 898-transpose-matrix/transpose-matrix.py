@@ -1,7 +1,10 @@
 class Solution:
     def transpose(self, matrix: List[List[int]]) -> List[List[int]]:
-        matrix1=[[0]*len(matrix) for _ in range(len(matrix[0]))]
-        for i in range(len(matrix)):
-            for j in range(len(matrix[i])):
-                matrix1[j][i]=matrix[i][j]
+        rows, cols = len(matrix), len(matrix[0])
+        matrix1 = [[0] * rows for _ in range(cols)]  # correct shape
+
+        for i in range(rows):
+            for j in range(cols):
+                matrix1[j][i] = matrix[i][j]
+
         return matrix1
