@@ -23,5 +23,5 @@ class Solution:
             if third!=None:
                 second=third.next
             else:
-                seconde=None
+                second=None
         return head
