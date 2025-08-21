@@ -6,20 +6,14 @@ class TreeNode:
         self.right = right
 
 class Solution:
+    def solve(self, root: Optional[TreeNode],inn : List[int]):
+        if not root:
+            return
+        self.solve(root.left,inn)
+        inn.append(root.val)
+        self.solve(root.right,inn)
+        
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        if root is None:
-            return []  # Return an empty list when root is None
-        
-        # Traverse left subtree
-        left = self.inorderTraversal(root.left)
-        
-        # Append current root value
-        result = left + [root.val]
-        
-        # Traverse right subtree
-        right = self.inorderTraversal(root.right)
-        
-        # Append right subtree result
-        result += right
-        
-        return result
+        inn=[]
+        self.solve(root,inn)
+        return inn
