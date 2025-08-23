@@ -14,29 +14,48 @@ class Solution:
             curr=nxt
         return prev
     def nextLargerNodes(self, head: Optional[ListNode]) -> List[int]:
-        curr =head
-        n=0
-        while curr:
-            curr=curr.next
-            n+=1
+        # curr =head
+        # n=0
+        # while curr:
+        #     curr=curr.next
+        #     n+=1
 
-        nge = [0] * n
-        st = []
-        nums=[]
+        # nge = [0] * n
+        # st = []
+        # nums=[]
+        # temp=head
+        # while temp:
+        #     nums.append(temp.val)
+        #     temp=temp.next
+        # for i in range(n-1,-1,-1):
+        #     while st and st[-1] <= nums[i % n]:
+        #         st.pop()
+        #     if i < n:
+        #         if st:
+        #             nge[i] = st[-1]
+        #     st.append(nums[i % n])
+        # return nge
+
+        # with Better Space
+        n=0
         temp=head
         while temp:
-            nums.append(temp.val)
+            n+=1
             temp=temp.next
-        for i in range(n-1,-1,-1):
-            while st and st[-1] <= nums[i % n]:
-                st.pop()
-
-
-            if i < n:
-                if st:
-                    nge[i] = st[-1]
-            st.append(nums[i % n])
-        return nge
+        res=[0]*n
+        last=self.reverse(head)
+        i=0
+        stack=[]
+        while last:
+            while stack and last.val>=stack[-1]:
+                stack.pop()
+            res[i]=0 if not stack else stack[-1]
+            stack.append(last.val)
+            last=last.next
+            i+=1
+        res.reverse()
+        return res
+    
 
         
         
