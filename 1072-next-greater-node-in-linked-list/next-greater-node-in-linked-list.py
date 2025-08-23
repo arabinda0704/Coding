@@ -49,7 +49,8 @@ class Solution:
         while last:
             while stack and last.val>=stack[-1]:
                 stack.pop()
-            res[i]=0 if not stack else stack[-1]
+            if stack:
+                res[i]=stack[-1]
             stack.append(last.val)
             last=last.next
             i+=1
