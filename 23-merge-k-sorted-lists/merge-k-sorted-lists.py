@@ -21,7 +21,7 @@ class Solution:
                     l2 =None
                 mergedList.append(self.mergeList(l1,l2))
             lists = mergedList
-        return lists[-1] 
+        return lists[0] #as only one element remains in the lists so we can return lists[-1] as well
 
 
     def mergeList(self ,l1 , l2):
