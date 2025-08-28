@@ -14,4 +14,6 @@ class Solution:
                 l+=1
             p-=1
         return squares
+
+        
         
