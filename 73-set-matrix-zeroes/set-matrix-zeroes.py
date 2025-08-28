@@ -24,7 +24,7 @@ class Solution:
             for j in range(COLS):
                 if matrix[i][j]==0:
                     matrix[0][j]=0
-                    if i==0:
+                    if i==0:#If in the first row anything is 0 set rowZero as True
                         rowZero=True
                     else:
                         matrix[i][0]=0
