@@ -14,11 +14,26 @@ class Solution:
         #     res[key].append(s)
         # return list(res.values())
 
-        #Another
-        res = {}
+        # #Another
+        # res = {}
+        # for s in strs:
+        #     key = "".join(sorted(s))
+        #     if key not in res:
+        #         res[key]=[]
+        #     res[key].append(s)
+        # return list(res.values())
+
+        # Practice
+        # res = defaultdict(list)
+        # for s in strs:
+        #     cnt=[0]*26
+        #     for c in s:
+        #         cnt[ord(c)-ord("a")]+=1
+        #     res[tuple(cnt)].append(s)
+        # return list(res.values())
+
+        res=defaultdict(list)
         for s in strs:
-            key = "".join(sorted(s))
-            if key not in res:
-                res[key]=[]
+            key="".join(sorted(s))
             res[key].append(s)
         return list(res.values())
