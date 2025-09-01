@@ -6,7 +6,6 @@ class Solution:
         for i in range(max(m,n)):
             if i<m:
                 res+=word1[i]
-            if i <n:
+            if i<n:
                 res+=word2[i]
-
         return res
