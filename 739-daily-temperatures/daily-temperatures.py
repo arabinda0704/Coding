@@ -17,15 +17,43 @@ class Solution:
 
         #Optimal
 
+        # res=[0]*len(temperatures)
+        # st=[] # pair: [temp, index]
+        # for i,t in enumerate(temperatures):
+        #     while st and t>st[-1][0]:
+        #         temp,ind=st.pop()
+        #         res[ind]=(i-ind)
+        #     st.append((t,i))
+        # return res
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #Practice
         res=[0]*len(temperatures)
-        st=[] # pair: [temp, index]
-        for i,t in enumerate(temperatures):
+        st=[]
+        for i in range(len(temperatures)):
+            t=temperatures[i]
             while st and t>st[-1][0]:
-                temp,ind=st.pop()
-                res[ind]=(i-ind)
+                temp,idx=st.pop()
+                res[idx]=(i-idx)
             st.append((t,i))
         return res
-            
 
 
 
