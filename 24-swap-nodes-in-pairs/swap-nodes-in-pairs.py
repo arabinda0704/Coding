@@ -71,20 +71,26 @@ class Solution:
         #Practice
         if not head or not head.next:
             return head
-        dummy=ListNode(0)
-        prev=dummy
-        while head and head.next:
-            first=head
-            second=head.next
+        # dummy=ListNode(0)
+        # prev=dummy
+        # while head and head.next:
+        #     first=head
+        #     second=head.next
 
-            #Swapping
-            prev.next=second
-            first.next=second.next
-            second.next=first
+        #     #Swapping
+        #     prev.next=second
+        #     first.next=second.next
+        #     second.next=first
 
-            prev=second.next#or first
-            head=first.next
-        return dummy.next
+        #     prev=second.next#or first
+        #     head=first.next
+        # return dummy.next
+
+        # Recursion
+        first,second=head,head.next
+        first.next=self.swapPairs(second.next)
+        second.next=first
+        return second
 
 
 
