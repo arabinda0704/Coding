@@ -10,12 +10,12 @@ class Solution:
         l=0
         r=n
         while l<=r:
-            m=(l+r)//2
-            res = guess(m)
-            if res > 0:
-                l = m + 1
-            elif res < 0:
-                r = m - 1
+            m=l+(r-l)//2
+            res=guess(m)
+            if res==1:
+                l=m+1
+            elif res==-1:
+                r=m-1
             else:
                 return m
         
