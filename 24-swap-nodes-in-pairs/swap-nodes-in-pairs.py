@@ -69,8 +69,8 @@ class Solution:
         # return second
 
         #Practice
-        if not head or not head.next:
-            return head
+        # if not head or not head.next:
+        #     return head
         # dummy=ListNode(0)
         # prev=dummy
         # while head and head.next:
@@ -86,7 +86,9 @@ class Solution:
         #     head=first.next
         # return dummy.next
 
-        # Recursion
+        # Recursion Practice
+        if not head or not head.next:
+            return head
         first,second=head,head.next
         first.next=self.swapPairs(second.next)
         second.next=first
