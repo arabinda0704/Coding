@@ -4,20 +4,18 @@ class Solution:
         operators="+-/*"
         for i in range(len(tokens)):
             if tokens[i] in operators:
-                op1=st.pop()
-                op2=st.pop()
+                a2=int(st.pop())
+                a1=int(st.pop())
                 if tokens[i]=="+":
-                    st.append(op1+op2)
-                if tokens[i]=="-":
-                    st.append(op2-op1)
-                if tokens[i]=="/":
-                    st.append(int(op2/op1))
-                if tokens[i]=="*":
-                    st.append(op1*op2)
-    
+                    st.append(a1+a2)
+                elif tokens[i]=="-":
+                    st.append(a1-a2)
+                elif tokens[i]=="/":
+                    st.append(int(a1/a2))
+                else:
+                    st.append(a1*a2)
+
             else:
                 st.append(int(tokens[i]))
-        return st.pop() #st[0] or st[-1] or st.pop() are same here because st will contain exactly one element at the end
-                
-
+        return st[0]
         
