@@ -16,9 +16,9 @@ class Solution:
 
     def getKthNode(self,head,k):
         curr=head
-        while k-1 and curr:
+        while k-1:
             k-=1
-            curr=curr.next if curr else None
+            curr=curr.next 
         return curr
     def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
         k=2
