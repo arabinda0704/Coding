@@ -82,7 +82,7 @@ class Solution:
             first.next=second.next
             second.next=first
 
-            prev=second.next
+            prev=second.next#or first
             head=first.next
         return dummy.next
 
