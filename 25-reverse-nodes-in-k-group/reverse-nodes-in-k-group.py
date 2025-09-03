@@ -28,21 +28,21 @@ class Solution:
             return head
         temp=head
 
-        prevnode=None
+        prev=None
         while temp:
-            kthNode=self.getKthNode(temp,k)
-            if not kthNode:
-                if prevNode:
-                    prevNode.next=nxt#or temp
+            kthnode=self.getKthNode(temp,k)
+            if not kthnode:
+                if prev:
+                    prev.next=nxt
                 break
-            nxt=kthNode.next
-            kthNode.next=None
+            nxt=kthnode.next
+            kthnode.next=None
             self.reverse(temp)
             if temp==head:
-                head=kthNode
+                head=kthnode
             else:
-                prevNode.next=kthNode
-            prevNode=temp
+                prev.next=kthnode
+            prev=temp
             temp=nxt
         return head
 
