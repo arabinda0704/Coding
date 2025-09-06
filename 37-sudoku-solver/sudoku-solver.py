@@ -17,8 +17,8 @@ class Solution:
                     boxes[(i // 3) * 3 + j // 3].add(num)
                 else:
                     empties.append((i, j))
-
-        def backtrack(k=0):
+        k=0
+        def backtrack(k):
             if k == len(empties):
                 return True  # solved
 
@@ -43,4 +43,4 @@ class Solution:
 
             return False
 
-        backtrack()
+        backtrack(k)
