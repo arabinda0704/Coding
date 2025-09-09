@@ -11,11 +11,10 @@ class Solution:
         dummy=ListNode(0)
         dummy.next=head
         prev=dummy
-        curr=head
-        while curr:
-            if curr.val in seen:
-                prev.next = curr.next   # delete curr
+        while prev.next:
+            if prev.next.val in seen:
+                prev.next = prev.next.next   # delete curr
             else:
-                prev = curr             # keep curr
-            curr = curr.next
+                prev = prev.next            # keep curr
+
         return dummy.next
