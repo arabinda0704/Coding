@@ -5,13 +5,12 @@ class Solution:
         m=len(score)
         n=len(score[0])
         for i in range(m):
-            max_index = i
-            for j in range(i + 1, m):
-                if score[j][k] > score[max_index][k]:
-                    max_index = j
-            
-            score[i], score[max_index] = score[max_index], score[i]
-        
+            maxx=i
+            #Selection sort
+            for j in range(i+1,m):
+                if score[j][k]>score[maxx][k]:
+                    maxx=j
+            score[i],score[maxx]=score[maxx],score[i]
         return score
             
 
