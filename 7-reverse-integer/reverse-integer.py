@@ -1,9 +1,9 @@
 class Solution:
-    def reverse(self, x: int) -> int:
+    def reverse(self, p: int) -> int:
         isNeg=False
-        if x<0:
+        if p<0:
             isNeg=True
-        p=abs(x)
+        p=abs(p)
         res=0
         while p:
             rem=p%10
