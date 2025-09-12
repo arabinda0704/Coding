@@ -1,8 +1,8 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
         # O(n^2) time and O(1) or O(n) space
-        # res=""
-        # maxLen=0
+        res=""
+        maxLen=0
         # for i in range(len(s)):
         #     # for odd
         #     l,r=i,i
@@ -22,6 +22,24 @@ class Solution:
         #         l-=1
         #         r+=1    
         # return res
+
+        # Practice
+        for i in range(len(s)):
+            l,r=i,i
+            while l>=0 and r<len(s) and s[l]==s[r]:
+                if r-l+1>maxLen:
+                    maxLen=r-l+1
+                    res=s[l:r+1]
+                l-=1
+                r+=1
+            l,r=i,i+1
+            while l>=0 and r<len(s) and s[l]==s[r]:
+                if r-l+1>maxLen:
+                    maxLen=r-l+1
+                    res=s[l:r+1]
+                l-=1
+                r+=1
+        return res
 
         # Most Optimal O(n) time and O(n) space which I also dont know how this is working-->Manacher's Algorithm
         def manacher(s):
