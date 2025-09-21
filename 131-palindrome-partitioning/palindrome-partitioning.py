@@ -12,7 +12,7 @@ class Solution:
 
         def dfs(i):
             if i==len(s):
-                res.append(part.copy())
+                res.append(list(part))
                 return
             for j in range(i,len(s)):
                 if self.isPali(s,i,j):
