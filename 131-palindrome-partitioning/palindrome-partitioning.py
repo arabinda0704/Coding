@@ -1,6 +1,6 @@
 class Solution:
     def isPali(self,s,l,r):
-        while l<r:
+        while l<=r:
             if s[l]!=s[r]:
                 return False
             l+=1
