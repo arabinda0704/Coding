@@ -1,23 +1,28 @@
+from typing import List
+
 class Solution:
-    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
+    def combinationSum2(self, nums: List[int], target: int) -> List[List[int]]:
         res = []
-        candidates.sort()
+        nums.sort()   # sort once to handle duplicates
 
-        def dfs(i, cur, total):
-            if total == target:
-                res.append(cur.copy())
+        def dfs(i, cur, target):
+            if target == 0:
+                res.append(cur[:])   # found a valid combination
                 return
-            if total > target or i == len(candidates):
+            if target < 0:
                 return
-            
-            cur.append(candidates[i])
-            dfs(i + 1, cur, total + candidates[i])
-            cur.pop()
 
-            
-            while i + 1 < len(candidates) and candidates[i] == candidates[i+1]:
-                i += 1
-            dfs(i + 1, cur, total)
-            
-        dfs(0, [], 0)
+            for j in range(i, len(nums)):
+                # \U0001f511 skip duplicates
+                if j > i and nums[j] == nums[j-1]:
+                    continue
+                # prune if number exceeds target
+                if nums[j] > target:
+                    break
+
+                cur.append(nums[j])
+                dfs(j+1, cur, target - nums[j])  # move forward
+                cur.pop()
+
+        dfs(0, [], target)
         return res
