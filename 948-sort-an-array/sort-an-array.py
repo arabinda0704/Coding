@@ -27,5 +27,28 @@ class Solution:
         left = self.sortArray(arr[:mid])
         right = self.sortArray(arr[mid:])
 
-        return self.merge(left, right)
+        # return self.merge(left, right)
+        # less space
+        i,j,k=0,0,0
+        while i<len(left) and j<len(right):
+            if left[i]<right[j]:
+                arr[k]=left[i]
+                i+=1
+            else:
+                arr[k]=right[j]
+                j+=1
+            k+=1
+        # Add remaining elements (if any)
+        # merged.extend(left[i:])
+        # merged.extend(right[j:])
+        while i<len(left):
+            arr[k]=left[i]
+            i+=1
+            k+=1
+        while j<len(right):
+            arr[k]=right[j]
+            j+=1
+            k+=1
+        return arr
+
         
