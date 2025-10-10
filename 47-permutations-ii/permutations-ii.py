@@ -2,18 +2,24 @@ from typing import List
 
 class Solution:
     def permuteUnique(self, nums: List[int]) -> List[List[int]]:
-        res = set()  # use set to avoid duplicates
-        self.backtrack(res, [], nums, [False] * len(nums))
-        return [list(p) for p in res]  # convert tuples back to lists
+        res = []
+        perm = []
+        count = {n: 0 for n in nums}
+        for num in nums:
+            count[num] += 1
 
-    def backtrack(self, res: set, perm: List[int], nums: List[int], pick: List[bool]):
-        if len(perm) == len(nums):
-            res.add(tuple(perm))  # store tuple (hashable)
-            return
-        for i in range(len(nums)):
-            if not pick[i]:
-                perm.append(nums[i])
-                pick[i] = True
-                self.backtrack(res, perm, nums, pick)
-                perm.pop()
-                pick[i] = False
+        def dfs():
+            if len(perm) == len(nums):
+                res.append(perm.copy())
+                return
+
+            for num in count:
+                if count[num] > 0:
+                    perm.append(num)
+                    count[num] -= 1
+                    dfs()
+                    count[num] += 1
+                    perm.pop()
+
+        dfs()
+        return res
