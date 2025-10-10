@@ -18,8 +18,9 @@ class Solution:
                     perm.append(num)
                     count[num] -= 1
                     dfs()
-                    count[num] += 1
                     perm.pop()
+                    count[num] += 1
+                    
 
         dfs()
         return res
