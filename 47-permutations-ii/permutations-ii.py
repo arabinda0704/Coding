@@ -4,7 +4,7 @@ class Solution:
     def permuteUnique(self, nums: List[int]) -> List[List[int]]:
         res = []
         perm = []
-        count = {n: 0 for n in nums}
+        count = defaultdict(int)
         for num in nums:
             count[num] += 1
 
