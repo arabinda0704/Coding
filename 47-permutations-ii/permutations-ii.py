@@ -10,7 +10,7 @@ class Solution:
 
         def dfs():
             if len(perm) == len(nums):
-                res.append(perm.copy())
+                res.append(perm[:])
                 return
 
             for num in count:
