@@ -1,7 +1,7 @@
 class Solution:
     def dfs(self,i, cur,target,res,nums):
             if target == 0:
-                res.append(cur.copy())
+                res.append(cur[:])
                 return
             
             if i>=len(nums) or target<0:
