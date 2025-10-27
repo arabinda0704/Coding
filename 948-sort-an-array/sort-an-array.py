@@ -19,7 +19,10 @@ class Solution:
             merged.append(arr2[j])
             j+=1
         return merged
+    
     def sortArray(self, arr: List[int]) -> List[int]:
+
+        # Merge Sort
         if len(arr) <= 1:
             return arr
 
@@ -50,5 +53,6 @@ class Solution:
             j+=1
             k+=1
         return arr
+        
 
         
